@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/tasks.dart';
+import 'package:todo_app/homepage.dart';
+//import 'package:todo_app/tasks.dart';
 
 void main() => runApp(const Todo());
 
@@ -11,7 +12,7 @@ class Todo extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'To Do',
-      home: TaskList(),
+      home: HomePage(),
     );
   }
 }

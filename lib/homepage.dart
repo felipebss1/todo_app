@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_app/tasks.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,10 +14,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    /* double deviceHeight(BuildContext context) =>
+    double deviceHeight(BuildContext context) =>
         MediaQuery.of(context).size.height;
 
-    double deviceWidth(BuildContext context) =>
+    /* double deviceWidth(BuildContext context) =>
         MediaQuery.of(context).size.width; */
 
     return Scaffold(
@@ -35,8 +36,8 @@ class _HomePageState extends State<HomePage> {
                 height: 30,
               ),
             ),
-            const SizedBox(
-              height: 60.0,
+            SizedBox(
+              height: deviceHeight(context) * 0.077,
             ),
             Row(
               children: [
@@ -75,15 +76,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 55,
+            SizedBox(
+              height: deviceHeight(context) * 0.074,
             ),
             Center(
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: 20,
+                    padding: EdgeInsets.only(
+                      bottom: deviceHeight(context) * 0.02,
                     ),
                     child: Container(
                       decoration: BoxDecoration(
@@ -98,7 +99,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: IconButton(
                         icon: const Icon(Icons.add),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const TaskList(),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -117,7 +124,8 @@ class _HomePageState extends State<HomePage> {
               height: 55,
             ),
             Container(
-              height: 250,
+              height: deviceHeight(context) * 0.32,
+              //height: 250,
               margin: const EdgeInsets.only(
                 left: 45,
               ),
@@ -134,98 +142,33 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: SizedBox(
+        height: deviceHeight(context) * 0.11,
         child: BottomNavigationBar(
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled),
+              icon: Icon(
+                Icons.home_filled,
+                color: Colors.grey.shade700,
+              ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.calendar_today_outlined,
+                color: Colors.grey.shade700,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.drag_handle_outlined,
+                color: Colors.grey.shade700,
               ),
               label: '',
             )
           ],
         ),
       ),
-      /* bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        color: const Color(0xFFF8F8FA),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              height: 90,
-              padding: const EdgeInsets.only(
-                left: 53,
-                right: 53,
-              ),
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    width: 1,
-                    color: Color(0xFFAAAAAA),
-                  ),
-                  right: BorderSide(
-                    width: 1,
-                    color: Color(0xFFAAAAAA),
-                  ),
-                ),
-              ),
-              child: const Icon(
-                Icons.home_filled,
-              ),
-            ),
-            Container(
-              height: 90,
-              padding: const EdgeInsets.only(
-                left: 53,
-                right: 53,
-              ),
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    width: 1,
-                    color: Color(0xFFAAAAAA),
-                  ),
-                  right: BorderSide(
-                    width: 1,
-                    color: Color(0xFFAAAAAA),
-                  ),
-                ),
-              ),
-              child: const Icon(
-                Icons.calendar_today_outlined,
-              ),
-            ),
-            Container(
-              height: 90,
-              padding: const EdgeInsets.only(
-                left: 53,
-                right: 53,
-              ),
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    width: 1,
-                    color: Color(0xFFAAAAAA),
-                  ),
-                ),
-              ),
-              child: const Icon(
-                Icons.drag_handle_rounded,
-              ),
-            ),
-          ],
-        ),
-      ), */
     );
   }
 }
@@ -260,10 +203,4 @@ Widget buildCard() => Container(
           ),
         ],
       ),
-
-      //título
-
-      //divisor
-
-      //lista de task
     );

@@ -24,7 +24,9 @@ class TaskList extends StatelessWidget {
                   ),
                   IconButton(
                     icon: const Icon(Icons.close),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop(context);
+                    },
                   ),
                 ],
               ),
@@ -87,7 +89,9 @@ class TaskList extends StatelessWidget {
                 left: 30.0,
                 right: 30.0,
               ),
-              child: ListView.builder(itemBuilder: itemBuilder),
+              /* child: ListView.builder(
+                itemBuilder: (context, index) {},
+              ), */
             ),
           ],
         ),

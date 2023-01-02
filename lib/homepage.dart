@@ -1,7 +1,7 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_app/card.dart';
 import 'package:todo_app/tasks.dart';
 
 class HomePage extends StatefulWidget {
@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
-                itemBuilder: (context, index) => buildCard(),
+                itemBuilder: (context, index) => const TaskListCard(),
                 separatorBuilder: (context, index) => const SizedBox(
                   width: 12,
                 ),
@@ -173,34 +173,45 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget buildCard() => Container(
-      width: 155,
-      padding: const EdgeInsets.only(
-        left: 28,
-        top: 40,
-      ),
-      decoration: BoxDecoration(
-        color:
-            Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Trip to Paris',
-            overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.mulish(
-              color: const Color(0xFFFFFFFF),
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
+/* Widget buildCard(BuildContext context) => InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const TaskList(),
+          ),
+        );
+      },
+      child: Container(
+        width: 155,
+        padding: const EdgeInsets.only(
+          left: 28,
+          top: 40,
+        ),
+        decoration: BoxDecoration(
+          color: Color((Random().nextDouble() * 0xFFFFFF).toInt())
+              .withOpacity(1.0),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Trip to Paris',
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.mulish(
+                color: const Color(0xFFFFFFFF),
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
-          ),
-          const Divider(
-            height: 35,
-            thickness: 1,
-            color: Color(0xFFFFFFFF),
-          ),
-        ],
+            const Divider(
+              height: 35,
+              thickness: 1,
+              color: Color(0xFFFFFFFF),
+            ),
+          ],
+        ),
       ),
     );
+ */

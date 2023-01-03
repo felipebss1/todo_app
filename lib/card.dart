@@ -1,7 +1,7 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_app/card_tiles.dart';
 import 'package:todo_app/tasks.dart';
 
 class TaskListCard extends StatefulWidget {
@@ -50,6 +50,11 @@ class _TaskListCardState extends State<TaskListCard> {
               height: 35,
               thickness: 1,
               color: Color(0xFFFFFFFF),
+            ),
+            CardTile(
+              taskName: "Book flights",
+              taskCompleted: false,
+              onChanged: (p0) {},
             ),
           ],
         ),

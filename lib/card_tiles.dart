@@ -18,7 +18,7 @@ class CardTile extends StatelessWidget {
     return Row(
       children: [
         Transform.scale(
-          scale: 0.8,
+          scale: 0.6,
           child: Checkbox(
             value: taskCompleted,
             onChanged: onChanged,
@@ -28,12 +28,14 @@ class CardTile extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          taskName,
-          overflow: TextOverflow.fade,
-          style: GoogleFonts.mulish(
-            color: const Color(0xFFFFFFFF),
-            fontSize: 13,
+        Flexible(
+          child: Text(
+            taskName,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.mulish(
+              color: const Color(0xFFFFFFFF),
+              fontSize: 13,
+            ),
           ),
         ),
       ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todo_app/card.dart';
-import 'package:todo_app/tasks.dart';
+import 'package:todo_app/task_list_card.dart';
+import 'package:todo_app/tasks_general_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,9 +16,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double deviceHeight(BuildContext context) =>
         MediaQuery.of(context).size.height;
-
-    /* double deviceWidth(BuildContext context) =>
-        MediaQuery.of(context).size.width; */
 
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8FA),
@@ -172,46 +169,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-/* Widget buildCard(BuildContext context) => InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const TaskList(),
-          ),
-        );
-      },
-      child: Container(
-        width: 155,
-        padding: const EdgeInsets.only(
-          left: 28,
-          top: 40,
-        ),
-        decoration: BoxDecoration(
-          color: Color((Random().nextDouble() * 0xFFFFFF).toInt())
-              .withOpacity(1.0),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Trip to Paris',
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.mulish(
-                color: const Color(0xFFFFFFFF),
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            const Divider(
-              height: 35,
-              thickness: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-          ],
-        ),
-      ),
-    );
- */

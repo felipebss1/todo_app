@@ -18,6 +18,9 @@ class _TaskListCardState extends State<TaskListCard> {
     ["Publish Friday blog post", false],
     ["Run 3 miles", false],
     ["Run 10 miles", false],
+    ["Run 20 miles", false],
+    ["Run 30 miles", false],
+    ["Run 40 miles", false],
   ];
 
   void boxChecked(bool? value, int index) {
@@ -74,7 +77,7 @@ class _TaskListCardState extends State<TaskListCard> {
               ),
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: todoList.length,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return CardTile(
                     taskName: todoList[index][0],

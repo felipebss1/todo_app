@@ -22,6 +22,7 @@ class CardTile extends StatelessWidget {
           child: Checkbox(
             value: taskCompleted,
             onChanged: onChanged,
+            activeColor: Colors.green,
             visualDensity: const VisualDensity(
               horizontal: -4,
               vertical: -4,
